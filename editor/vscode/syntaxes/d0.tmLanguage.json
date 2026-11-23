@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "D0",
+  "scopeName": "source.d0",
+  "patterns": [
+    {
+      "name": "comment.line.double-slash.d0",
+      "match": "//.*$"
+    },
+    {
+      "name": "comment.block.d0",
+      "begin": "/\\*",
+      "end": "\\*/"
+    },
+    {
+      "name": "string.quoted.double.d0",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.d0",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "keyword.control.d0",
+      "match": "\\b(fn|let|mut|if|else|while|for|in|return|module|struct|trait|import|pub)\\b"
+    },
+    {
+      "name": "constant.language.boolean.d0",
+      "match": "\\b(true|false)\\b"
+    },
+    {
+      "name": "storage.type.d0",
+      "match": "\\b(Int|Float|Bool|String|Char|Void)\\b"
+    },
+    {
+      "name": "constant.numeric.d0",
+      "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+    },
+    {
+      "name": "keyword.operator.d0",
+      "match": "(\\+|-|\\*|/|%|==|!=|<=|>=|<|>|=|\\+=|-=|\\*=|/=|&&|\\|\\||!|\\.\\.=|\\.\\.|->)"
+    }
+  ]
+}

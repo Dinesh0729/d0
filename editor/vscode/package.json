@@ -1,0 +1,30 @@
+{
+  "name": "d0-language",
+  "displayName": "D0 Programming Language",
+  "description": "Syntax highlighting and language support for D0 (.d0)",
+  "version": "0.1.0",
+  "publisher": "dinesh",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "d0",
+        "aliases": ["D0", "d0"],
+        "extensions": [".d0"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "d0",
+        "scopeName": "source.d0",
+        "path": "./syntaxes/d0.tmLanguage.json"
+      }
+    ]
+  }
+}

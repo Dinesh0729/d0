@@ -1,0 +1,23 @@
+fn multiply(a: Int, b: Int) -> Int {
+    return a * b;
+}
+
+fn main() -> Void {
+    // 1. Type mismatch in initialization
+    let age: Int = "thirty";
+
+    // 2. Reassignment to immutable variable
+    let fixed: Int = 100;
+    fixed = 200;
+
+    // 3. Use of undeclared variable
+    print(unknown_variable);
+
+    // 4. Incompatible condition type in 'if'
+    if 42 {
+        print("Not boolean");
+    }
+
+    // 5. Wrong argument type in function call
+    let result: Int = multiply("wrong", 10);
+}

@@ -1,0 +1,16 @@
+[package]
+name = "d0c"
+version = "0.1.0"
+edition = "2021"
+description = "D0 programming language compiler frontend"
+license = "MIT OR Apache-2.0"
+
+[lib]
+name = "d0c"
+path = "src/lib.rs"
+
+[[bin]]
+name = "d0c"
+path = "src/main.rs"
+
+[dependencies]

@@ -1,0 +1,25 @@
+fn calculate_bonus(salary: Float, factor: Float) -> Float {
+    return salary * factor;
+}
+
+fn main() -> Void {
+    let name: String = "Dinesh";
+    mut score: Int = 85;
+    let base_salary: Float = 50000.0;
+    let factor: Float = 1.2;
+
+    score = score + 5;
+
+    if score > 80 {
+        let bonus: Float = calculate_bonus(base_salary, factor);
+        print(bonus);
+    } else {
+        print("Standard rate");
+    }
+
+    for i in 1..=3 {
+        print(i);
+    }
+
+    print(name);
+}

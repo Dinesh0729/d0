@@ -1,0 +1,18 @@
+fn main() -> Void {
+    mut count: Int = 0;
+
+    while count < 3 {
+        print(count);
+        count = count + 1;
+    }
+
+    if count == 3 {
+        print("finished");
+    } else {
+        print("unexpected");
+    }
+
+    for i in 1..=5 {
+        print(i);
+    }
+}

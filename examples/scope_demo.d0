@@ -1,0 +1,12 @@
+fn main() -> Void {
+    let outer: String = "outer scope";
+
+    if true {
+        let inner: String = "inner scope";
+        print(outer);
+        print(inner);
+    }
+
+    // 'outer' is accessible here
+    print(outer);
+}
