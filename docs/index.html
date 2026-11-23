@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D0 Programming Language | Systems · Security · Automation · AI</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Official documentation for D0 (D-Zero) — an independent, statically typed programming language built in Rust by Dinesh. Designed for systems programming, defensive cybersecurity, AI, and automation.">
+  <meta name="keywords" content="D0 programming language, D0 language, D-Zero, Dinesh D0, d0c compiler, Rust programming language, cybersecurity language, systems programming">
+  <meta name="author" content="Dinesh">
+  <link rel="canonical" href="https://dinesh0729.github.io/d0/">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dinesh0729.github.io/d0/">
+  <meta property="og:title" content="D0 Programming Language (D-Zero)">
+  <meta property="og:description" content="Independent, statically typed programming language built with Rust for Systems, Defensive Security, Automation, and AI.">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://dinesh0729.github.io/d0/">
+  <meta property="twitter:title" content="D0 Programming Language">
+  <meta property="twitter:description" content="Code Beyond Limits. Systems, Security, Automation, and AI.">
+
+  <!-- Google Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "D0 Programming Language",
+    "alternateName": "D-Zero",
+    "operatingSystem": "macOS, Linux, Windows",
+    "applicationCategory": "DeveloperApplication",
+    "programmingLanguage": "Rust",
+    "author": {
+      "@type": "Person",
+      "name": "Dinesh"
+    },
+    "description": "An independent, statically typed programming language built in Rust for systems programming, cybersecurity, and AI automation.",
+    "url": "https://dinesh0729.github.io/d0/",
+    "downloadUrl": "https://github.com/Dinesh0729/d0"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --heading: #f0f6fc;
+      --accent: #58a6ff;
+      --accent-glow: rgba(88, 166, 255, 0.15);
+      --green: #2ea043;
+      --code-bg: #0b0e14;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: rgba(13, 17, 23, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    .brand { font-size: 1.4rem; font-weight: 700; color: var(--heading); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--accent); }
+    nav a { color: var(--text); text-decoration: none; margin-left: 1.5rem; font-size: 0.95rem; transition: color 0.2s; }
+    nav a:hover { color: var(--accent); }
+    .hero {
+      max-width: 1000px;
+      margin: 4rem auto;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid rgba(88, 166, 255, 0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    h1 { font-size: 3.2rem; color: var(--heading); margin-bottom: 1rem; line-height: 1.2; }
+    .tagline { font-size: 1.3rem; color: #8b949e; margin-bottom: 2rem; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap; }
+    .btn {
+      padding: 0.8rem 1.8rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      font-size: 1rem;
+    }
+    .btn-primary { background: var(--green); color: #fff; }
+    .btn-primary:hover { background: #2c974b; }
+    .btn-secondary { background: var(--card-bg); color: var(--text); border: 1px solid var(--border); }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--heading); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.8rem; transition: transform 0.2s, border-color 0.2s; }
+    .card:hover { transform: translateY(-4px); border-color: var(--accent); }
+    .card h3 { color: var(--heading); margin-bottom: 0.6rem; font-size: 1.2rem; }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      overflow-x: auto;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 0.9rem;
+      color: #e6edf3;
+      margin: 1rem 0;
+    }
+    .code-title { font-size: 0.85rem; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-top: 2rem; }
+    footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: #8b949e; font-size: 0.9rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="brand">D0 <span>Language</span></a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#syntax">Syntax</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#quickstart">Quick Start</a>
+      <a href="https://github.com/Dinesh0729/d0" target="_blank">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">Official D0 0.1.0 • Built in Rust</div>
+      <h1>D0 Programming Language</h1>
+      <p class="tagline">SYSTEMS · DEFENSIVE CYBERSECURITY · AUTOMATION · AI<br><em>Code Beyond Limits.</em></p>
+      
+      <div class="cta-buttons">
+        <a href="#quickstart" class="btn btn-primary">Get Started</a>
+        <a href="https://github.com/Dinesh0729/d0" class="btn btn-secondary" target="_blank">View on GitHub ★</a>
+      </div>
+    </section>
+
+    <div class="container">
+      <section id="features" class="grid">
+        <div class="card">
+          <h3>⚡ Systems Programming</h3>
+          <p>Memory safety by default with raw bare-metal execution performance, built from scratch using pure Rust.</p>
+        </div>
+        <div class="card">
+          <h3>🛡️ Defensive Security</h3>
+          <p>Native authorization scopes and audit primitives engineered directly into the core language architecture.</p>
+        </div>
+        <div class="card">
+          <h3>🤖 AI & Automation</h3>
+          <p>First-class abstractions for local Ollama and cloud AI models, background job schedulers, and modern DevOps.</p>
+        </div>
+        <div class="card">
+          <h3>🔍 Static Type Checking</h3>
+          <p>Compile-time safety with symbol tables, immutable variables (<code>let</code>), and explicit mutation (<code>mut</code>).</p>
+        </div>
+      </section>
+
+      <section id="syntax">
+        <h2 style="color: var(--heading); font-size: 2rem; margin-bottom: 0.5rem;">D0 Language Syntax</h2>
+        <p style="color: #8b949e; margin-bottom: 1rem;">Simple C-style braces, typed declarations, and clean semantics.</p>
+
+        <div class="code-title">Hello World (hello.d0)</div>
+        <pre><code>module HelloWorld {
+    fn main() -> Void {
+        print("Hello, World!");
+        print("Welcome to D0 Programming Language by Dinesh");
+    }
+}</code></pre>
+
+        <div class="code-title">Variables and Functions (functions.d0)</div>
+        <pre><code>fn add(a: Int, b: Int) -> Int {
+    return a + b;
+}
+
+fn main() -> Void {
+    let name: String = "Dinesh";
+    mut score: Int = 80;
+    
+    score = score + 10;
+    let result: Int = add(score, 5);
+    
+    print(result);
+}</code></pre>
+      </section>
+
+      <section id="architecture" style="margin-top: 4rem;">
+        <h2 style="color: var(--heading); font-size: 2rem; margin-bottom: 0.5rem;">Compiler Pipeline</h2>
+        <p style="color: #8b949e; margin-bottom: 1.5rem;">Custom multi-stage compilation engine built entirely without external runtimes.</p>
+        <pre><code>D0 Source (.d0)
+      │
+      ▼
+[ Lexer / Tokenizer ]             ── Phase 2 (Completed)
+      │
+      ▼
+[ Parser & AST Construction ]     ── Phase 3 (Completed)
+      │
+      ▼
+[ Semantic Analysis & Types ]     ── Phase 4 (Completed)
+      │
+      ▼
+[ AST Tree-Walking Interpreter ]  ── Phase 5 (Next Milestone)
+      │
+      ▼
+[ Bytecode Compiler & VM ]        ── Phase 6 (Planned)</code></pre>
+      </section>
+
+      <section id="quickstart" style="margin-top: 4rem;">
+        <h2 style="color: var(--heading); font-size: 2rem; margin-bottom: 0.5rem;">Quick Start</h2>
+        <p style="color: #8b949e; margin-bottom: 1rem;">Clone, build, and check your first D0 program in seconds:</p>
+
+        <pre><code># 1. Clone D0 repository
+git clone https://github.com/Dinesh0729/d0.git
+cd d0
+
+# 2. Build compiler frontend (d0c)
+cargo build --release
+
+# 3. Check syntax and types
+cargo run -- check examples/valid_program.d0
+
+# 4. View AST structure
+cargo run -- parse examples/hello.d0</code></pre>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>D0 Programming Language © 2026. Created by <strong>Dinesh</strong> · Inspired by <strong>Surya</strong>.</p>
+    <p>Licensed under Apache License 2.0. <a href="https://github.com/Dinesh0729/d0" target="_blank">GitHub Repository</a></p>
+  </footer>
+
+</body>
+</html>

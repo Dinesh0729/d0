@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dinesh0729.github.io/d0/sitemap.xml
