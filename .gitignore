@@ -1,3 +1,4 @@
+# Build outputs
 /target
 **/*.rs.bk
 Cargo.lock
@@ -14,5 +15,21 @@ Cargo.lock
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# Environment
+# Environment and sensitive keys
 .env
+.env.*
+*.env
+*.pem
+*.key
+*.pfx
+*.p12
+*.token
+credentials.json
+secrets.json
+id_rsa*
+id_ed25519*
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp

@@ -1,0 +1,26 @@
+name: D0 Security & Code Quality Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  security-audit:
+    name: Security and Code Quality Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+
+      - name: Verify Formatting
+        run: cargo fmt --all -- --check
+
+      - name: Clippy Security & Linting
+        run: cargo clippy -- -D warnings
